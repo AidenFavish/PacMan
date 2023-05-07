@@ -534,6 +534,9 @@ public class PacManGame
         int n = pacman.getSoundIndicator();
         if (prioritySound > n)
             n = prioritySound;
+
+        if (n == 1 && freeze > 1) // fixes issue when pacman freezes on his sound triggering frame
+            n = 0;
         
         return n;
     }
